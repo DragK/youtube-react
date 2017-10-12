@@ -1,0 +1,11 @@
+.videos-details {
+  display: none;
+}
+
+.video:hover .videos-details {
+  display: block;
+}
+
+img {
+  cursor: pointer;
+}
