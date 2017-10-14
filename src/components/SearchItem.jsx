@@ -12,18 +12,20 @@ export default class SearchItem extends React.Component {
 
     return (
       <div className="video">
-        { state.isImages ? (
-          <img 
-            src={snippet.thumbnails.medium.url} 
-            title="Click to watch"
-            alt={snippet.title}
-            onClick={ () => {
-              this.setState({isImages: !state.isImages});
-            }} />
-        ) : (
-          <iframe width="560" height="315" src={"https://www.youtube-nocookie.com/embed/" + id.videoId} frameborder="0" allowfullscreen></iframe>
-        )}
-        
+        <div>
+          { state.isImages ? (
+            <img 
+              className="media" 
+              src={snippet.thumbnails.medium.url} 
+              title="Click to watch"
+              alt={snippet.title}
+              onClick={ () => {
+                this.setState({isImages: !state.isImages});
+              }} />
+          ) : (
+            <iframe className="media" width="calc(100% - 40)" height="auto" src={"https://www.youtube-nocookie.com/embed/" + id.videoId} frameborder="0" allowfullscreen></iframe>
+          )}
+        </div>
         <div className="videos-details">
           <h3>{snippet.title}</h3>
           <p>{snippet.description}</p>
