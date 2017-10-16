@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
-import SearchItem from './containers/SearchItem';
+import SearchItem from './components/SearchItem';
 import './App.css';
+import YT_API from './constants';
 
 export default class App extends React.Component {
   state = {
@@ -26,6 +27,7 @@ export default class App extends React.Component {
             onChange={() => {
               this.searchInputHandler(input.value)
             }}
+            placeholder="Type something you search..."
           />
         </header>
         {
@@ -41,7 +43,7 @@ export default class App extends React.Component {
 
   searchInputHandler = (text) => {    
     if (text.length < 1) 
-      false;
+      return false;
 
     this.waitOnEndedTyping()
       .then(bool => {
@@ -69,7 +71,7 @@ export default class App extends React.Component {
           q: text,
           part: "snippet",
           type: 'video',
-          key: 'AIzaSyDvmBzj5y6yqjxyg5aCiIqp6DFbHhaSR3s',
+          key: YT_API,
           maxResults: 10
         }      
     }).then(res => {

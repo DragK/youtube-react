@@ -14,18 +14,20 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "description": "App which use YouTube API",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DragK/reacty.git"
+    "url": "git+https://github.com/DragK/youtube-react.git"
   },
   "author": "DragK",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DragK/reacty/issues"
+    "url": "https://github.com/DragK/youtube-react/issues"
   },
-  "homepage": "https://github.com/DragK/reacty#readme"
+  "homepage": "https://dragk.github.io/youtube-react"
 }
