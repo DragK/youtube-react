@@ -3,7 +3,9 @@
   width: calc(100% - 40px);
   background: white;
   padding: 10px;
-  padding: 10px;
+  display: grid;
+  border-bottom: 1px solid gray;
+  margin: 0 10px;
 }
 
 .video .media {
@@ -11,22 +13,9 @@
   margin: 0;
 }
 
-.video:hover {
-  position: absolute;
-  box-shadow: 0 0 20px gray;
-}
-
-.video:hover .media {
-  margin: 0 auto;
-  display: block;
-}
-
-.videos-details {
-  display: none;
-}
-
-.video:hover .videos-details {
-  display: block;
+header {
+  grid-row: 1;
+  grid-column: 1/2;
 }
 
 img {
@@ -36,4 +25,27 @@ img {
 
 img:hover {
   filter: opacity(75%);
+}
+
+iframe {
+  grid-row: 1;
+  grid-column: 2/2;
+}
+
+@media all and (max-width: 720px) {
+  iframe {
+    height: 280px;
+  }
+}
+
+@media all and (max-width: 1080px) and (min-width: 720px) {
+  iframe {
+    height: 360px;
+  }
+}
+
+@media all and (min-width: 1080px) {
+  iframe {
+    height: 420px;
+  }
 }

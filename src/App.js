@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-import SearchItem from './components/SearchItem';
+import SearchItem from './containers/SearchItem';
 import './App.css';
 
 export default class App extends React.Component {
@@ -16,14 +16,12 @@ export default class App extends React.Component {
     return (
       <div>
         <header>
-          <h1>Search videos on YouTube: </h1>
+          <h1>Search videos on YouTube:</h1>
           <input 
             className="search-input"
             type="search"
             ref={
-              node => {
-                input = node
-              }
+              node => input = node
             }
             onChange={() => {
               this.searchInputHandler(input.value)

@@ -3,7 +3,8 @@ import './SearchItem.css';
 
 export default class SearchItem extends React.Component {
   state = {
-    isImages: true
+    isImages: true,
+    isOpen: false
   }
 
   render() {
@@ -12,24 +13,13 @@ export default class SearchItem extends React.Component {
 
     return (
       <div className="video">
-        <div>
-          { state.isImages ? (
-            <img 
-              className="media" 
-              src={snippet.thumbnails.medium.url} 
-              title="Click to watch"
-              alt={snippet.title}
-              onClick={ () => {
-                this.setState({isImages: !state.isImages});
-              }} />
-          ) : (
-            <iframe className="media" width="calc(100% - 40)" height="auto" src={"https://www.youtube-nocookie.com/embed/" + id.videoId} frameborder="0" allowfullscreen></iframe>
-          )}
-        </div>
-        <div className="videos-details">
-          <h3>{snippet.title}</h3>
-          <p>{snippet.description}</p>
-        </div>
+        <header>
+          <iframe className="media" width="100%" src={"https://www.youtube-nocookie.com/embed/" + id.videoId} frameborder="0" allowfullscreen></iframe>
+          <div className="videos-details">
+            <h3>{snippet.title}</h3>
+            <p>{snippet.description}</p>
+          </div>          
+        </header>
       </div>
     );
   }
